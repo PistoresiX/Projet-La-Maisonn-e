@@ -1,0 +1,36 @@
+
+Site vitrine (pas de e-commerce)
+Très ergonomique, SIMPLE
+
+
+Fonctionnalités :
+
+Roulement d'effectifs et de personnels toute l'année => ENT / carnet de bord
+- affichage planning
+- fiches de paye
+- absences
+- horaires
+
+Gestion admin :
+- gestion RH (CRUD employés)
+- gérer contenu page d'accueil (texte)
+- gérer blog (presse, photos, etc.)
+
+Page d'accueil / publique :
+- page d'accueil + afficher les logos des partenaires (financeurs)
+- afficher contenus (blog) chargés par les admins
+
+
+Charte graphique ? (voir après avoir fait la maquette)
+
+/!\ RGPD : pas de noms de famille sur la partie publique (ENT uniquement)
+
+Technos :
+- Hébergement : IONOS (accès récupérés)
+
+
+Contacts :
+- Mme FREVILLE (congés en juillet)
+- M. HUBLE
+
+Rencontre à prévoir vers le 30/06
