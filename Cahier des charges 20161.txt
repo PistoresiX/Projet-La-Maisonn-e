@@ -1,6 +1,9 @@
 
-Site vitrine (pas de e-commerce)
-Très ergonomique, SIMPLE
+
+Objectifs : 
+
+L’association, La Maisonnée, est engagée dans un combat contre l'exclusion sociale et culturelle des personnes en difficulté qui résident à Corbie et dans ses environs. Elle porte un projet de chantier d'insertion spécialisé dans le second œuvre du bâtiment, plusieurs ateliers d'insertion sociale :"bricolage et rénovation", "cuisine et restauration", " à la rencontre de l'espace numérique", "savoirs de base". La mission principale, dans le cadre du chantier, est l'insertion professionnelle pour faciliter l'accès ou le retour à l'emploi ou à la formation qualifiante de personnes en grande difficulté. 
+Dans cette optique, l’organisme souhaite faire évoluer son site internet afin de pouvoir l’alimenter en temps voulue et également pour pouvoir proposer une vitrine de l’organisation de l’association aux différents partenaires.
 
 
 Fonctionnalités :
@@ -34,3 +37,26 @@ Contacts :
 - M. HUBLE
 
 Rencontre à prévoir vers le 30/06
+
+L’existant : 
+
+
+° Les articles mis en ligne sont maintenus à jour par l’organisme et alimenté en direct.
+
+
+° Les articles sont mis en avant dans la section « notre actualité » 
+
+
+° La présentation des activités de l’entreprise ce fait dans la rubrique « Notre activité » 
+
+
+° Un espace doit être dédié aux entreprises partenaire de l’organisation en contrepartie du financement qui leurs est fournies.
+
+
+° Un espace doit être mis en place afin que les employés puissent accéder à l’heure horaires de travaille ainsi qu’à leurs documents administratifs.
+
+
+° le site doit être responsive et répondre aux normes RGPD (Pas de nom n’y de description détaillée que ça soit pour les clients comme pour les employés.)
+
+
+° la simplicité du site internet est la mise en forme adopté.
