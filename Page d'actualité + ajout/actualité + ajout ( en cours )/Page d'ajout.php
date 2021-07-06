@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Paje d'ajout d'actualité</title>
     <style>
         .vertical-line{
           border-left: 2px solid #000;
           position: relative;
-          bottom: 400px; left: 430px;
-          height: 400px;
-          ;
+          bottom: 240px; left: 460px;
+          height: 100px;
+          
         }
-        .page-content {
-          width: calc(100% - 17rem);
-          margin-left: 17rem;
-          transition: all 0.4s;
-        }
+
         body {
             background-image: url(https://img.freepik.com/vecteurs-libre/fond-degrade-dans-tons-verts_23-2148358649.jpg?size=626&ext=jpg);
             background-repeat: no-repeat;
@@ -25,23 +21,22 @@
         }
         .container {
             background-color: rgb(255, 255, 255);
-        }       
+        }
+
+        
       </style>
 </head>
-
 <header>
     <div class="container shadow rounded"> 
         <div class="row">
             <div class="col-12">
-                <img src="../La maisonnée/Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">
-                               
+                <img src="Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">       
             </div>
         </div>       
     </div>
 </header> 
-
 <body>
-    <div class="container shadow rounded">
+    <div class="container shadow rounded ">
         <div class="row m-auto">
 
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -77,22 +72,16 @@
                                     </li>
                                 </ul>
                                 <div class="vertical-line"></div>
+    
                 </div>
             </div>
-            <div class="col-8 p-3">
-                <h2 class="text-center text-primary">Notre domaine d'activité</h2>
-                <p class="text-center">Nous sommes spécialisés dans les métiers du second oeuvre du bâtiment: maçonnerie, rejointoiement,travaux d'isolation, pose de cloisons, de portes
-                et de fenêtres, réalisation de faux plafonds, pose de carrelage, décapage, peinture et pose de revêtements muraux et de sols. Nous avons un savoir faire reconnu dans la 
-                réalisation de rampe d'accès pour personne à mobilité réduite et des travaux de mise aux normes en matière d'accessibilité des lieux recevant du public.</p>
-                <h2 class="text-center text-primary">Nos Chantiers d'insertion</h2>
-                <p class="text-center">Notre association est engagée dans un combat contre l'exclusion sociale et culturelle des personnes en difficulté qui résident à Corbie et dans ses environs.</p>
-                <p class="text-center">Elle porte un chantier d'insertion spécialisé dans le second oeuvre du bâtiment, plusieurs ateliers d'insertion sociale :"bricolage et rénovation", "cuisine et restauration", " à la rencontre de l'espace numérique", " savoirs de base".</p>
-                <p class="text-center">La mission principale, dans le cadre du chantier d'insertion, est l'insertion professionnelle pour faciliter l'accès ou le retour à l'emploi ou à la formation qualifiante de personnes en grande difficulté.</p>
-            
-                <div class="col-12">
-                    <img src="../La maisonnée/Images/Handicap_palier_de_repos.jpg" class="position-relative" style="left : 185px; top : 80px;" Position : sticky alt="Image responsive" title="Image responsive">
-
-                </div>
+            <div class="col-8 p-3 position-absolute" style="right: -180px">
+                <form action="Script.php" method="post" enctype="multipart/form-data">
+                    <input type="file" name="monfichier"><br><br>
+                    <p>Saisissez une déscription : </p>
+                    <textarea rows="15" cols="100" id="text" name="text"></textarea><br>
+                    <input type="submit" value="Envoyer">
+                </form>
             </div>
         </div>       
     </div>
@@ -101,18 +90,16 @@
     <div class="container shadow"> 
         <div class="row">
             <div class="col-12">
-                <img src="../La maisonnée/Images/Logo partenaire/FSE_2.png" class="position-relative" style="right : 12px" Position : sticky alt="Image responsive" title="Image responsive">
-                <img src="../La maisonnée/Images/Logo partenaire/B_CREDIT_MUTUEL2014_Q.png" class="w-25" alt="Image responsive" title="Image responsive">
-                <img src="../La maisonnée/Images/Logo partenaire/Crédit_Agricole.png" height="100" width="120" class="position-relative" style="left : 20px;" Position : sticky alt="Image responsive" title="Image responsive">
-                <img src="../La maisonnée/Images/Logo partenaire/Fond_Vinci_logo.jpg" width="256" class="position-relative" style="left : 600px; bottom : 137px; " Position : sticky alt="Image responsive" title="Image responsive">
-                <img src="../La maisonnée/Images/Logo partenaire/caisse-depargne-logo copy.png" height="140" width="170" class="position-relative" style="right : 240px; bottom : 5px;" Position : sticky alt="Image responsive" title="Image responsive">               
-            </div>
+                <img src="Images/FSE_2.png" class="position-relative" style="right : 12px" Position : sticky alt="Image responsive" title="Image responsive">
+                <img src="Images/B_CREDIT_MUTUEL2014_Q.png" class="w-25" alt="Image responsive" title="Image responsive">
+                <img src="Images/Crédit_Agricole.png" height="100" width="120" class="position-relative" style="left : 20px;" Position : sticky alt="Image responsive" title="Image responsive">
+                <img src="Images/Fond_Vinci_logo.jpg" width="256" class="position-relative" style="left : 600px; bottom : 137px; " Position : sticky alt="Image responsive" title="Image responsive">
+                <img src="Images/caisse-depargne-logo copy.png" height="140" width="170" class="position-relative" style="right : 240px; bottom : 5px;" Position : sticky alt="Image responsive" title="Image responsive">               
+            </div>    
+        </div>
+    </div>
 </footer>
-
-
-
-
-
+</html>
 
 <!--Script boostrap 5.0 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
