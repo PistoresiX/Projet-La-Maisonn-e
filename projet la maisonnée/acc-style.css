@@ -1,0 +1,48 @@
+.flotte {
+    float:left;
+    }
+
+
+h2 { 
+    text-align: center;                         /* Gros titre centré */
+}
+
+p
+{
+text-justify: auto;                             /*texte justifié automatique*/
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 1.2em;
+}
+
+
+nav {
+    
+    
+    text-align: right;                                  /*alignement de texte à droite*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   /*police*/
+    word-spacing: 1.5rem;                               /*espace entre les mots*/
+    font-size: 1.1em;                                   /*taille du texte*/
+
+  }
+  
+  img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+body
+{
+    background-color:beige; 
+    color: black; 
+}
+
+div{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   /*police*/
+    text-align: left;                                   /*texte aligné à gauche*/
+    font-size: 1.1em;                                   /*taille du texte*/
+}
+
+footer{
+    text-align: center;
+}
