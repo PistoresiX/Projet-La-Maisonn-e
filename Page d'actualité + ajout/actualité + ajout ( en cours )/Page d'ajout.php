@@ -75,9 +75,9 @@
     
                 </div>
             </div>
-            <div class="col-8 p-3 position-absolute" style="right: -180px">
+            <div class="col-8 p-3 position-absolute" style="right: -100px">
                 <form action="Script.php" method="post" enctype="multipart/form-data">
-                    <input type="file" name="monfichier"><br><br>
+                    <input type="file" name="image"><br><br>
                     <p>Saisissez une déscription : </p>
                     <textarea rows="15" cols="100" id="text" name="text"></textarea><br>
                     <input type="submit" value="Envoyer">
