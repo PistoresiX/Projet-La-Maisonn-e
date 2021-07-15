@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.css" type="text/css" media="screen" />
-    <title>Paje d'ajout d'actualité</title>
+    <title>Page d'actualité</title>
 </head>
 <header>
     <div class="container shadow rounded"> 
         <div class="row">
             <div class="col-12">
-                <img src="Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">       
+                <img src="Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">
+                <a href="http://www.xn--lamaisonne-j7a.fr/Page%20d'ajout.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un arcticle</a>
             </div>
         </div>       
     </div>
@@ -56,14 +57,7 @@
     
                 </div>
             </div>
-            <div class="col-8 p-3 position-absolute" style="right: -100px">
-                <form action="Script.php" method="post" enctype="multipart/form-data">
-                    <input type="file" name="image"><br><br>
-                    <p>Saisissez une déscription : </p>
-                    <textarea rows="15" cols="100" id="text" name="text"></textarea><br>
-                    <input type="submit" value="Envoyer">
-                </form>
-            </div>
+            
         </div>       
     </div>
 </body>
