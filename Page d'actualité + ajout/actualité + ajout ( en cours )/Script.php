@@ -6,8 +6,8 @@
 <?php
 require "ConnexionBdd.php"; // Inclusion de notre bibliothèque de fonctions
 $db = connexionBase();// Appel de la fonction de connexion
-$fichier = basename($_FILES['image']['name']);
 $texte = $_POST["text"];
+$titre = $_POST["titre"];
 if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
 {
         // Testons si le fichier n'est pas trop gros
@@ -25,12 +25,25 @@ if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
                         // On peut valider le fichier et le stocker définitivement
                         move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/' . $file);
                         echo "L'envoi a bien été effectué !"."\n";
-                        echo $texte;
+
                 }
         }
         else
         echo "erreur";
 }
+
+$requete = "INSERT INTO actualite ( fichier, titre, texte, ) VALUES ( $file, $titre, $texte)";
+
+$resultat = $db->query($requete);
+
+if ($resultat)
+echo "<p>Les infos ont été ajoutées</p>";
+else
+echo "<p>Erreur</p>";
+
+
+
+var_dump($_POST);
 
 ?>
 <div class="col-8 p-3 position-absolute" style="right: -100px">
