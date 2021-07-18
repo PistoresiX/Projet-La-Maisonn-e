@@ -4,8 +4,6 @@
 </head>
 <body>
 <?php
-require "ConnexionBdd.php"; // Inclusion de notre bibliothèque de fonctions
-$db = connexionBase();// Appel de la fonction de connexion
 $texte = $_POST["text"];
 $titre = $_POST["titre"];
 if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
@@ -32,18 +30,28 @@ if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
         echo "erreur";
 }
 
-$requete = "INSERT INTO actualite ( fichier, titre, texte, ) VALUES ( $file, $titre, $texte)";
+    // Preparation de la connexion BDD.
+    require_once("ConnexionBdd.php");
+    $db = connexionBase("localhost","root","","la maisonnée");
 
-$resultat = $db->query($requete);
+    // Préparation de la requete.
+    $requete = $db->prepare("INSERT INTO actualite(fichier, titre, texte)
+    VALUES(:fichier,:titre,:texte)");
+    $requete->bindValue(":fichier",$file);
+    $requete->bindValue(":titre",$titre);
+    $requete->bindValue(":texte",$texte);
+
+
+    // Execution de la requête
+    $resultat = $requete->execute();
+    // var_dump($resultat);
+
 
 if ($resultat)
 echo "<p>Les infos ont été ajoutées</p>";
 else
 echo "<p>Erreur</p>";
 
-
-
-var_dump($_POST);
 
 ?>
 <div class="col-8 p-3 position-absolute" style="right: -100px">

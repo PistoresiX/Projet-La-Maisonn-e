@@ -6,6 +6,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="Style.css" type="text/css" media="screen" />
     <title>Page d'actualité</title>
+    <?php
+    require "ConnexionBdd.php";
+    $db = connexionBase();
+    $requete = 'SELECT * FROM actualite ';
+
+    $result = $db->query($requete);
+    $produit = $result->fetch(PDO::FETCH_OBJ);
+    ?>
 </head>
 <header>
     <div class="container shadow rounded"> 
@@ -57,7 +65,12 @@
     
                 </div>
             </div>
-            
+            <div class="col-8 p-3 position-absolute" style="right: -200px">
+            titre :
+            <?php echo $produit->titre ?> <br>
+            <img src="uploads/ <?php $produit->ID?>"  />
+
+            </div>
         </div>       
     </div>
 </body>
