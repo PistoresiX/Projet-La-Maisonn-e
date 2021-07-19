@@ -1,0 +1,47 @@
+
+
+VOLET PUBLIC
+
+- Barre de navigation à afficher en haut et en bas de page
+
+- Couleurs :
+	- fond jaune pâle (cf. maquette n°2 de Chakib)
+	- titres en bleu
+	- survols bouton en jaune (cf. maquette Lucas)
+	- ajouter un peu de couleurs
+
+- Partenaires (l'assoc renvoie la liste) :
+	- financeurs sur la page d'accueil (UE, Etat, collectivités)
+	- mécènes (= financeurs ponctuels) sur une page à part
+
+- Pages :
+	- "A propos" (présentation assoc + activités)
+	- Revue de presse
+	- Actualités
+	- Actions d'insertion sociale et professionnelle, 2 sous-menus :
+		- insertion sociale
+		- insertion professionnelle
+	- Chantiers en cours
+
+
+==========
+
+VOLET INTERNE
+
+- Prévoir l'affection des salariés dans des équipes et gestion des équipes
+
+- Prévoir chargement documents via formulaire + docs à affecter en lecture à certaines équipes
+
+- Prévoir la possibilité de créer et gérer des tiroirs (= catégories) dans lesquels ranger les documents
+
+- Docs à charger : surtout PDF (+ images JPG / JPEG / PNG)
+
+
+==========
+
+PROCHAINS RDVs
+
+- 29/07
+- 20/08
+
++ présentation site dans les locaux de l'assoc (date à valider)
