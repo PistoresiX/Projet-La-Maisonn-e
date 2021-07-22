@@ -68,20 +68,9 @@
             </div>
         </div>       
     </div>
-</body>
-<footer>
-    <div class="container shadow"> 
-        <div class="row">
-            <div class="col-12">
-                <img src="Images/FSE_2.png" class="position-relative" style="right : 12px" Position : sticky alt="Image responsive" title="Image responsive">
-                <img src="Images/B_CREDIT_MUTUEL2014_Q.png" class="w-25" alt="Image responsive" title="Image responsive">
-                <img src="Images/Crédit_Agricole.png" height="100" width="120" class="position-relative" style="left : 20px;" Position : sticky alt="Image responsive" title="Image responsive">
-                <img src="Images/Fond_Vinci_logo.jpg" width="256" class="position-relative" style="left : 600px; bottom : 137px; " Position : sticky alt="Image responsive" title="Image responsive">
-                <img src="Images/caisse-depargne-logo copy.png" height="140" width="170" class="position-relative" style="right : 240px; bottom : 5px;" Position : sticky alt="Image responsive" title="Image responsive">               
-            </div>    
-        </div>
     </div>
-</footer>
+</body>
+
 </html>
 
 <!--Script boostrap 5.0 -->
