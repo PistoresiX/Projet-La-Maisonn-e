@@ -13,16 +13,6 @@
 
     $result = $db->query($requete);
     $produit = $result->fetch(PDO::FETCH_OBJ);
-    if (!$result) {
-        $tableauErreurs = $db->errorInfo();
-        echo $tableauErreur[2];
-        die("Erreur dans la requête");
-    }
-
-    if ($result->rowCount() == 0) {
-        // Pas d'enregistrement
-        die("La table est vide");
-    }
 
     ?>
 </head>
@@ -31,7 +21,7 @@
         <div class="row">
             <div class="col-12">
                 <img src="Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">
-                <a href="http://www.xn--lamaisonne-j7a.fr/Page%20d'ajout.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un arcticle</a>
+                <a href="http://www.lamaisonnee.fr:8080/Page%20d'ajout.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un arcticle</a>
             </div>
         </div>       
     </div>
@@ -40,96 +30,181 @@
 
 <br>
 <div class="carousel-item active">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-4">
+            <div class="col-lg-4">
             <div class="card">
             <?php
                 while ($row = $result->fetch(PDO::FETCH_OBJ)) 
                     {    
                         ?>
                         
-                        <td><img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>"></td>
-                        <?php 
-                  
-                    }
-            ?>   
-              <div class="card-body">
-                <h5 class="card-title"><?php  while ($row = $result->fetch(PDO::FETCH_OBJ)) 
-                    {
-                        echo "<br>";
-                        echo "<th class='text-muted'>" . $row->titre . "</th>";
-                        echo "<br>";
-                     } ?></h5>
-                
-                <a href="rp.php" class="btn btn-primary">Voir</a>
-              </div>
-            </div>
-          </div>
+                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
 
-          <div class="col-lg-4 d-none d-lg-block">
-          <div class="card">
-            <?php
-                while ($row = $result->fetch(PDO::FETCH_OBJ)) 
-                    {    
-                        ?>
-                        
-                        <td><img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>"></td>
                         <?php 
-                  
-                    }
-            ?>   
-              <div class="card-body">
-                <h5 class="card-title"><?php  while ($row = $result->fetch(PDO::FETCH_OBJ)) 
-                    {
-                        echo "<br>";
-                        echo "<th class='text-muted'>" . $row->titre . "</th>";
-                        echo "<br>";
-                     } ?></h5>
-                <p class="card-text"><?php  while ($row = $result->fetch(PDO::FETCH_OBJ)) 
-                    { 
-                        echo "<th class='text-muted'>" . $row->texte . "</th>";
-                        echo "<br>";                    
-                    } ?>
-                </p>
-                <a href="rp.php" class="btn btn-primary">Voir</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 d-none d-lg-block">
-          <div class="card">
-            <?php
-                while ($row = $result->fetch(PDO::FETCH_OBJ)) 
-                    {    
-                        ?>
-                        
-                        <td><img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>"></td>
-                        <?php 
-                  
-                    }
-            ?>   
-              <div class="card-body">
-                <h5 class="card-title"><?php  while ($row = $result->fetch(PDO::FETCH_OBJ)) 
-                    {
+
+                   
+            ?> 
+          
+            <div class="card-body">
+                <h5 class="card-title"><?php   
+                    
                         echo "<br>";
                         echo "<th class='text-muted'>" . $row->titre . "</th>";
                         echo "<br>";
-                     } ?></h5>
-                <p class="card-text"><?php  while ($row = $result->fetch(PDO::FETCH_OBJ)) 
-                    { 
-                        echo "<th class='text-muted'>" . $row->texte . "</th>";
-                        echo "<br>";                    
-                    } ?>
-                </p>
+                        if ($row != "")
+                        {
+                            break;
+                        }
+                      }
+                     
+
+                    ?></h5>
+              
                 <a href="rp.php" class="btn btn-primary">Voir</a>
-              </div>
+                    
+                    </div> 
+                    
+            </div>         
             </div>
-          </div>
         </div>
-      </div>
     </div>
 </div>
+
+<br>
+<div class="carousel-item active">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 position-relative" style="left: 800px ; bottom: 20px">
+            <div class="card">
+            <?php
+                while ($row = $result->fetch(PDO::FETCH_OBJ)) 
+                    {    
+                        ?>
+                        
+                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
+
+                        <?php 
+
+
+                   
+            ?> 
+          
+            <div class="card-body">
+                <h5 class="card-title"><?php   
+                    
+                        echo "<br>";
+                        echo "<th class='text-muted'>" . $row->titre . "</th>";
+                        echo "<br>";
+                        if ($row != "")
+                        {
+                            break;
+                        }
+                      }
+                     
+
+                    ?></h5>
+              
+                <a href="rp.php" class="btn btn-primary">Voir</a>
+                    
+                    </div> 
+                    
+            </div>         
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="carousel-item active">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 position-relative" style="top: 70px">
+            <div class="card">
+            <?php
+                while ($row = $result->fetch(PDO::FETCH_OBJ)) 
+                    {    
+                        ?>
+                        
+                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
+
+                        <?php 
+
+
+                   
+            ?> 
+          
+            <div class="card-body">
+                <h5 class="card-title"><?php   
+                    
+                        echo "<br>";
+                        echo "<th class='text-muted'>" . $row->titre . "</th>";
+                        echo "<br>";
+                        if ($row != "")
+                        {
+                            break;
+                        }
+                      }
+                     
+
+                    ?></h5>
+              
+                <a href="rp.php" class="btn btn-primary">Voir</a>
+                    
+                    </div> 
+                    
+            </div>         
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="carousel-item active">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 position-relative" style=" left: 800px ; top: 50px">
+            <div class="card">
+            <?php
+                while ($row = $result->fetch(PDO::FETCH_OBJ)) 
+                    {    
+                        ?>
+                        
+                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
+
+                        <?php 
+
+
+                   
+            ?> 
+          
+            <div class="card-body">
+                <h5 class="card-title"><?php   
+                    
+                        echo "<br>";
+                        echo "<th class='text-muted'>" . $row->titre . "</th>";
+                        echo "<br>";
+                        if ($row != "")
+                        {
+                            break;
+                        }
+                      }
+                     
+
+                    ?></h5>
+              
+                <a href="rp.php" class="btn btn-primary">Voir</a>
+                    
+                    </div> 
+                    
+            </div>         
+            </div>
+        </div>
+    </div>
+</div>
+
+
   
 </body>
 
