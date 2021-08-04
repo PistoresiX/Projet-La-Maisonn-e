@@ -24,14 +24,14 @@ if(isset($_POST['name']) && isset($_POST['password']))
         $result = $db->query($requete);
         var_dump($requete);
         var_dump($result);
-        $user=$result->fetch(PDO::FETCH_OBJ);
-        var_dump($user);
+        $users=$result->fetch(PDO::FETCH_OBJ);
+        var_dump($users);
 
       $resultat=$users->resultat;
       var_dump($resultat);
         if($resultat!=0) // prise en compte de tout les champs renseigné
         {
-           $_SESSION ['user_Name','user_password'] = $name,$password;
+           $_SESSION['users_Name','users_password'] = $name,$password;
            header('Location: accueil2.0.html');
            var_dump($_SESSION );
         }
@@ -39,15 +39,12 @@ if(isset($_POST['name']) && isset($_POST['password']))
         {
            header('Location: connexion.php?erreur=1'); // informations incorrect
         }
-    }
     else
     {
        header('Location: connexion.php?erreur=2'); // informations vide
     }
-}
 else
 {
      header('Location:connexion.php');
 }
-
 ?>

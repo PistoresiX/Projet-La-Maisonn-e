@@ -2,109 +2,105 @@ CREATE DATABASE LA_MAISONNEE
 ;
 
 CREATE TABLE employee(
-   Id_employee COUNTER,
-   emp_lastname VARCHAR(50),
-   emp_firstname VARCHAR(50),
-   emp_codepostal INT,
-   emp_adresse VARCHAR(50),
-   emp_city VARCHAR(50),
-   emp_mail VARCHAR(50),
-   emp_post VARCHAR(50),
-   emp_phone INT,
-   emp_user VARCHAR(50),
-   emp_password VARCHAR(50),
-   PRIMARY KEY(Id_employee)
+   empl_id INT,
+   empl_lastname VARCHAR(50),
+   empl_firstname VARCHAR(50),
+   empl_password VARCHAR(50),
+   empl_role LOGICAL,
+   PRIMARY KEY(empl_id)
 );
 
-CREATE TABLE quote(
-   Id_quote COUNTER,
-   quot_date INT,
-   quot_price INT,
-   quot_payement INT,
-   quot_adress VARCHAR(50),
-   quot_postalcode INT,
-   quot_city VARCHAR(50),
-   quot_statut LOGICAL,
-   PRIMARY KEY(Id_quote)
+CREATE TABLE partner(
+   part_id INT,
+   part_name VARCHAR(50),
+   part_email VARCHAR(50),
+   part_adress VARCHAR(250),
+   part_city VARCHAR(50),
+   part_phone VARCHAR(10),
+   part_files VARCHAR(250),
+   PRIMARY KEY(part_id)
 );
 
-CREATE TABLE customers(
-   Id_customers COUNTER,
-   cus_name VARCHAR(50),
-   cus_adress VARCHAR(50),
-   cus_postalcode INT,
-   cus_city VARCHAR(50),
-   cus_phone INT,
-   cus_siret INT,
-   PRIMARY KEY(Id_customers)
-);
-
-CREATE TABLE suppliers(
-   Id_suppliers COUNTER,
-   sup_name VARCHAR(50),
-   sup_email VARCHAR(50),
-   sup_city VARCHAR(50),
-   sup_phone INT,
-   sup_adress VARCHAR(50),
-   PRIMARY KEY(Id_suppliers)
-);
-
-CREATE TABLE management(
-   manag_id INT,
-   manag_absence DATE,
-   manag_payslip DECIMAL(15,2),
-   manag_planning DATETIME,
-   manag_timetable TIME,
-   PRIMARY KEY(manag_id)
+CREATE TABLE team(
+   team_id INT,
+   team_name VARCHAR(50),
+   PRIMARY KEY(team_id)
 );
 
 CREATE TABLE media(
-   media_id INT,
-   media_article VARCHAR(50),
-   media_video VARCHAR(50),
-   media_picture VARCHAR(50),
-   media_date_ajout DATE,
-   media_date_modif DATE,
-   PRIMARY KEY(media_id)
+   med_id INT,
+   med_files VARCHAR(50),
+   med_format VARCHAR(50),
+   med_date_add DATE,
+   PRIMARY KEY(med_id)
 );
 
-CREATE TABLE consult(
-   Id_employee INT,
-   Id_customers INT,
-   PRIMARY KEY(Id_employee, Id_customers),
-   FOREIGN KEY(Id_employee) REFERENCES employee(Id_employee),
-   FOREIGN KEY(Id_customers) REFERENCES customers(Id_customers)
+CREATE TABLE files(
+   fil_id INT,
+   fil_name VARCHAR(50),
+   fil_format VARCHAR(10),
+   fil_date_add DATE,
+   PRIMARY KEY(fil_id)
 );
 
-CREATE TABLE establish(
-   Id_employee INT,
-   Id_quote INT,
-   PRIMARY KEY(Id_employee, Id_quote),
-   FOREIGN KEY(Id_employee) REFERENCES employee(Id_employee),
-   FOREIGN KEY(Id_quote) REFERENCES quote(Id_quote)
+CREATE TABLE categorie(
+   cat_id INT,
+   cat_name VARCHAR(50),
+   PRIMARY KEY(cat_id)
 );
 
-CREATE TABLE contact(
-   Id_employee INT,
-   Id_suppliers INT,
-   PRIMARY KEY(Id_employee, Id_suppliers),
-   FOREIGN KEY(Id_employee) REFERENCES employee(Id_employee),
-   FOREIGN KEY(Id_suppliers) REFERENCES suppliers(Id_suppliers)
+CREATE TABLE class(
+   cla_id INT,
+   cla_name VARCHAR(50),
+   PRIMARY KEY(cla_id)
+);
+
+CREATE TABLE actuality(
+   actu_id INT,
+   actu_title VARCHAR(50),
+   actu_text TEXT,
+   actu_date_add DATETIME,
+   cla_id INT NOT NULL,
+   PRIMARY KEY(actu_id),
+   FOREIGN KEY(cla_id) REFERENCES class(cla_id)
 );
 
 CREATE TABLE organize(
-   Id_employee INT,
-   manag_id INT,
-   PRIMARY KEY(Id_employee, manag_id),
-   FOREIGN KEY(Id_employee) REFERENCES employee(Id_employee),
-   FOREIGN KEY(manag_id) REFERENCES management(manag_id)
+   empl_id INT,
+   team_id INT,
+   PRIMARY KEY(empl_id, team_id),
+   FOREIGN KEY(empl_id) REFERENCES employee(empl_id),
+   FOREIGN KEY(team_id) REFERENCES team(team_id)
 );
 
 CREATE TABLE moderate(
-   Id_employee INT,
-   media_id INT,
-   PRIMARY KEY(Id_employee, media_id),
-   FOREIGN KEY(Id_employee) REFERENCES employee(Id_employee),
-   FOREIGN KEY(media_id) REFERENCES media(media_id)
+   empl_id INT,
+   actu_id INT,
+   PRIMARY KEY(empl_id, actu_id),
+   FOREIGN KEY(empl_id) REFERENCES employee(empl_id),
+   FOREIGN KEY(actu_id) REFERENCES actuality(actu_id)
 );
 
+CREATE TABLE store(
+   fil_id INT,
+   cat_id INT,
+   PRIMARY KEY(fil_id, cat_id),
+   FOREIGN KEY(fil_id) REFERENCES files(fil_id),
+   FOREIGN KEY(cat_id) REFERENCES categorie(cat_id)
+);
+
+CREATE TABLE detail(
+   actu_id INT,
+   med_id INT,
+   PRIMARY KEY(actu_id, med_id),
+   FOREIGN KEY(actu_id) REFERENCES actuality(actu_id),
+   FOREIGN KEY(med_id) REFERENCES media(med_id)
+);
+
+CREATE TABLE consult(
+   team_id INT,
+   fil_id INT,
+   PRIMARY KEY(team_id, fil_id),
+   FOREIGN KEY(team_id) REFERENCES team(team_id),
+   FOREIGN KEY(fil_id) REFERENCES files(fil_id)
+);
