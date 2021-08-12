@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="" type="text/css" media="screen" />
+    <link rel="stylesheet" href="PageActuCSS" type="text/css" media="screen" />
     <title>Page d'actualité</title>
     <?php
     require "ConnexionBdd.php";
     $db = connexionBase();
-    $requete = 'SELECT * FROM actualite ';
+    $requete = 'SELECT * FROM actualite ORDER BY ID DESC ';
 
     $result = $db->query($requete);
-    $produit = $result->fetch(PDO::FETCH_OBJ);
+    
 
     ?>
 </head>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-12">
                 <img src="Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">
-                <a href="http://www.lamaisonnee.fr:8080/Page%20d'ajout.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un arcticle</a>
+                <a href="http://www.xn--lamaisonne-j7a.fr/Page%20d'ajout.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un arcticle</a>
             </div>
         </div>       
     </div>
@@ -32,7 +32,7 @@
 <div class="carousel-item active">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 position-relative" style="left: 200px">
             <div class="card">
             <?php
                 while ($row = $result->fetch(PDO::FETCH_OBJ)) 
@@ -62,7 +62,7 @@
 
                     ?></h5>
               
-                <a href="rp.php" class="btn btn-primary">Voir</a>
+              <a href="ActualitéComplète.php" class="btn btn-primary">Voir</a>
                     
                     </div> 
                     
@@ -76,7 +76,7 @@
 <div class="carousel-item active">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 position-relative" style="left: 800px ; bottom: 20px">
+            <div class="col-lg-4 position-relative" style="left: 700px ; bottom: 20px">
             <div class="card">
             <?php
                 while ($row = $result->fetch(PDO::FETCH_OBJ)) 
@@ -106,7 +106,7 @@
 
                     ?></h5>
               
-                <a href="rp.php" class="btn btn-primary">Voir</a>
+              <a href="ActualitéComplète.php" class="btn btn-primary">Voir</a>
                     
                     </div> 
                     
@@ -120,7 +120,7 @@
 <div class="carousel-item active">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 position-relative" style="top: 70px">
+            <div class="col-lg-4 position-relative" style="left: 200px ; top: 420px">
             <div class="card">
             <?php
                 while ($row = $result->fetch(PDO::FETCH_OBJ)) 
@@ -150,7 +150,7 @@
 
                     ?></h5>
               
-                <a href="rp.php" class="btn btn-primary">Voir</a>
+                <a href="ActualitéComplète.php" class="btn btn-primary">Voir</a>
                     
                     </div> 
                     
@@ -164,7 +164,7 @@
 <div class="carousel-item active">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 position-relative" style=" left: 800px ; top: 50px">
+            <div class="col-lg-4 position-relative" style=" left: 700px ; top: 400px">
             <div class="card">
             <?php
                 while ($row = $result->fetch(PDO::FETCH_OBJ)) 
@@ -194,7 +194,7 @@
 
                     ?></h5>
               
-                <a href="rp.php" class="btn btn-primary">Voir</a>
+                <a href="ActualitéComplète.php" class="btn btn-primary">Voir</a>
                     
                     </div> 
                     
