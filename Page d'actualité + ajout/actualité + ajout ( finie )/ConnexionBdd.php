@@ -6,7 +6,7 @@ function connexionBase()
    $host = "localhost";
    $login= "root";  // Votre loggin d'accès au serveur de BDD 
    $password="";    // Le Password pour vous identifier auprès du serveur
-   $base = "la maisonnee";  // La bdd avec laquelle vous voulez travailler 
+   $base = "la_maisonnee";  // La bdd avec laquelle vous voulez travailler 
 
    try 
    {

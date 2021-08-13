@@ -9,7 +9,7 @@
     <?php
     require "ConnexionBdd.php";
     $db = connexionBase();
-    $requete = 'SELECT * FROM actualite ORDER BY ID DESC ';
+    $requete = 'SELECT * FROM media ORDER BY med_id DESC ';
 
     $result = $db->query($requete);
     
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-12">
                 <img src="Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">
-                <a href="http://www.xn--lamaisonne-j7a.fr/Page%20d'ajout.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un arcticle</a>
+                <a href="http://www.lamaisonnee.dvp:8095/Page%20d'ajout.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ajouter un arcticle</a>
             </div>
         </div>       
     </div>
@@ -39,28 +39,22 @@
                     {    
                         ?>
                         
-                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
-
-                        <?php 
+                        <img src="uploads/<?= $row->med_files; ?>" alt="<?= $row->med_id . "." . $row->med_files; ?>">
 
 
-                   
-            ?> 
           
             <div class="card-body">
                 <h5 class="card-title"><?php   
                     
                         echo "<br>";
-                        echo "<th class='text-muted'>" . $row->titre . "</th>";
+                        echo $row->med_titre;
                         echo "<br>";
                         if ($row != "")
                         {
                             break;
                         }
                       }
-                     
-
-                    ?></h5>
+            ?></h5>
               
               <a href="ActualitéComplète.php" class="btn btn-primary">Voir</a>
                     
@@ -83,7 +77,7 @@
                     {    
                         ?>
                         
-                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
+                        <img src="uploads/<?= $row->med_files; ?>" alt="<?= $row->med_id . "." . $row->med_files; ?>">
 
                         <?php 
 
@@ -95,7 +89,7 @@
                 <h5 class="card-title"><?php   
                     
                         echo "<br>";
-                        echo "<th class='text-muted'>" . $row->titre . "</th>";
+                        echo "<th class='text-muted'>" . $row->med_titre . "</th>";
                         echo "<br>";
                         if ($row != "")
                         {
@@ -127,7 +121,7 @@
                     {    
                         ?>
                         
-                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
+                        <img src="uploads/<?= $row->med_files; ?>" alt="<?= $row->med_id . "." . $row->med_files; ?>">
 
                         <?php 
 
@@ -139,7 +133,7 @@
                 <h5 class="card-title"><?php   
                     
                         echo "<br>";
-                        echo "<th class='text-muted'>" . $row->titre . "</th>";
+                        echo "<th class='text-muted'>" . $row->med_titre . "</th>";
                         echo "<br>";
                         if ($row != "")
                         {
@@ -171,7 +165,7 @@
                     {    
                         ?>
                         
-                        <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
+                        <img src="uploads/<?= $row->med_files; ?>" alt="<?= $row->med_id . "." . $row->med_files; ?>">
 
                         <?php 
 
@@ -183,7 +177,7 @@
                 <h5 class="card-title"><?php   
                     
                         echo "<br>";
-                        echo "<th class='text-muted'>" . $row->titre . "</th>";
+                        echo "<th class='text-muted'>" . $row->med_titre . "</th>";
                         echo "<br>";
                         if ($row != "")
                         {

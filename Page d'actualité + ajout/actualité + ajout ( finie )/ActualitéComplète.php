@@ -9,7 +9,7 @@
     <?php
     require "ConnexionBdd.php";
     $db = connexionBase();
-    $requete = 'SELECT * FROM actualite ORDER BY ID DESC ';
+    $requete = 'SELECT * FROM media ORDER BY med_id DESC ';
 
     $result = $db->query($requete);
     
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-12">
                 <img src="Images/logo-maisonnee.png" class="rounded mx-auto d-block w-25" alt="Image responsive" title="Image responsive" id="test">
-                <a href="http://www.xn--lamaisonne-j7a.fr/PageActualit%C3%A9.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Page d'acceuil</a>
+                <a href="http://www.lamaisonnee.dvp:8095/PageActualit%C3%A9.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Page d'acceuil</a>
             </div>
         </div>       
     </div>
@@ -39,18 +39,20 @@
                         ?>
                             
                                 <h4>
-                                    <?= $row->titre; ?>
+                                    <?= $row->med_titre; ?>
                                 </h4>
                         <?php
                         echo "<br>";
                         ?>     
                         
                                                
-                                <img src="uploads/<?= $row->fichier; ?>" alt="<?= $row->ID . "." . $row->fichier; ?>">
-                                <?= $row->texte; ?>
+                                <img src="uploads/<?= $row->med_files; ?>" alt="<?= $row->med_id . "." . $row->med_files; ?>">
+                                
                             
                         <?php
                         echo "<br>";
+                        echo "<br>";
+                        echo $row->med_texte;
                         ?>
                         <hr>
                         

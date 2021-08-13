@@ -32,10 +32,10 @@ if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0)
 
     // Preparation de la connexion BDD.
     require_once("ConnexionBdd.php");
-    $db = connexionBase("localhost","root","","la maisonnee");
+    $db = connexionBase("localhost","root","","la_maisonnee");
 
     // Préparation de la requete.
-    $requete = $db->prepare("INSERT INTO actualite(fichier, titre, texte)
+    $requete = $db->prepare("INSERT INTO media (med_files, med_titre, med_texte)
     VALUES(:fichier,:titre,:texte)");
     $requete->bindValue(":fichier",$file);
     $requete->bindValue(":titre",$titre);
